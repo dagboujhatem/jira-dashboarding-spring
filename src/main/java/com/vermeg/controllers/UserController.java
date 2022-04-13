@@ -36,8 +36,8 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-    public ApiResponse<User> update(@RequestBody User userDto) {
-        return new ApiResponse<>(HttpStatus.OK.value(), "User updated successfully.",userService.update(userDto));
+    public ApiResponse<User> update(@RequestBody User updatedUser) {
+        return new ApiResponse<>(HttpStatus.OK.value(), "User updated successfully.",userService.update(updatedUser));
     }
 
     @DeleteMapping("/{id}")

@@ -60,13 +60,13 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
 		return optionalUser.isPresent() ? optionalUser.get() : null;
 	}
 
-    public User update(User userDto) {
-        User user = findById(userDto.getId());
+    public User update(User updatedUser) {
+        User user = findById(updatedUser.getId());
         if(user != null) {
-            BeanUtils.copyProperties(userDto, user, "password");
+            BeanUtils.copyProperties(updatedUser, user, "password");
             userRepository.save(user);
         }
-        return userDto;
+        return updatedUser;
     }
 
     public User save(User user) {

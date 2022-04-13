@@ -19,15 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58e7b301-ef15-41fa-920d-e14a8d4aa2bc" name="Default Changelist" comment="refactor spring security">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/entities/ERole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/entities/ERole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/entities/ERole.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/entities/ERole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/entities/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/security/JwtAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/security/JwtAuthenticationFilter.class" afterDir="false" />
+    <list default="true" id="58e7b301-ef15-41fa-920d-e14a8d4aa2bc" name="Default Changelist" comment="refactor roles">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/payload/responses/TokenResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/payload/responses/TokenResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/API.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/acript.sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649877913184</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="refactor roles">
+      <created>1649888765292</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1649888765292</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,7 +168,8 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="add swagger api documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="add swagger api documentation" />
+    <MESSAGE value="refactor roles" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor roles" />
   </component>
   <component name="WindowStateProjectService">
     <state x="140" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1649878481064">
@@ -201,10 +208,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="230" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1649888607849" />
-    <state x="389" y="0" width="587" height="728" key="find.popup" timestamp="1649888697048">
+    <state x="389" y="0" width="587" height="728" key="find.popup" timestamp="1649889096485">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="389" y="0" width="587" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1649888697048" />
+    <state x="389" y="0" width="587" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1649889096485" />
   </component>
   <component name="masterDetails">
     <states>
