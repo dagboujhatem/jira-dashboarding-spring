@@ -1,6 +1,6 @@
 package com.vermeg.service;
 
-import com.vermeg.model.User;
+import com.vermeg.entities.User;
 
 import java.util.List;
 

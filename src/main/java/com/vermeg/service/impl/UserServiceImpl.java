@@ -1,7 +1,7 @@
 package com.vermeg.service.impl;
 
-import com.vermeg.dao.UserDao;
-import com.vermeg.model.User;
+import com.vermeg.repositories.UserRepository;
+import com.vermeg.entities.User;
 import com.vermeg.service.UserService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,13 +24,13 @@ import java.util.Optional;
 public class UserServiceImpl implements UserDetailsService ,UserService{
 	
 	@Autowired
-	private UserDao userDao;
+	private UserRepository userRepository;
 
 	@Autowired
 	private BCryptPasswordEncoder bcryptEncoder;
 
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		User user = userDao.findByUsername(username);
+		User user = userRepository.findByUsername(username);
 		if(user == null){
 			throw new UsernameNotFoundException("Invalid username or password.");
 		}
@@ -43,20 +43,20 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
 
 	public List<User> findAll() {
 		List<User> list = new ArrayList<>();
-		userDao.findAll().iterator().forEachRemaining(list::add);
+		userRepository.findAll().iterator().forEachRemaining(list::add);
 		return list;
 	}
 
 	public void delete(int id) {
-		userDao.deleteById(id);
+		userRepository.deleteById(id);
 	}
 
 	public User findOne(String username) {
-		return userDao.findByUsername(username);
+		return userRepository.findByUsername(username);
 	}
 
 	public User findById(int id) {
-		Optional<User> optionalUser = userDao.findById(id);
+		Optional<User> optionalUser = userRepository.findById(id);
 		return optionalUser.isPresent() ? optionalUser.get() : null;
 	}
 
@@ -64,7 +64,7 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
         User user = findById(userDto.getId());
         if(user != null) {
             BeanUtils.copyProperties(userDto, user, "password");
-            userDao.save(user);
+            userRepository.save(user);
         }
         return userDto;
     }
@@ -79,6 +79,6 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
 	    newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
 		newUser.setAge(user.getAge());
 		newUser.setSalary(user.getSalary());
-        return userDao.save(newUser);
+        return userRepository.save(newUser);
     }
 }
