@@ -5,14 +5,10 @@ import com.vermeg.entities.User;
 import java.util.List;
 
 public interface UserService {
-
-    User save(User user);
+    User findUserByEmail(String username);
     List<User> findAll();
-    void delete(int id);
-
-    User findOne(String username);
-
+    User save(User user);
     User findById(int id);
-
     User update(User userDto);
+    void delete(int id);
 }

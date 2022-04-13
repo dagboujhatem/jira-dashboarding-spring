@@ -29,12 +29,12 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
 	@Autowired
 	private BCryptPasswordEncoder bcryptEncoder;
 
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		User user = userRepository.findByUsername(username);
+	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+		User user = userRepository.findByEmail(email);
 		if(user == null){
 			throw new UsernameNotFoundException("Invalid username or password.");
 		}
-		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), getAuthority());
+		return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), getAuthority());
 	}
 
 	private List<SimpleGrantedAuthority> getAuthority() {
@@ -51,8 +51,8 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
 		userRepository.deleteById(id);
 	}
 
-	public User findOne(String username) {
-		return userRepository.findByUsername(username);
+	public User findUserByEmail(String email) {
+		return userRepository.findByEmail(email);
 	}
 
 	public User findById(int id) {
@@ -70,15 +70,12 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
     }
 
     public User save(User user) {
-
-//		user.getPassword()
 	    User newUser = new User();
-	    newUser.setUsername(user.getUsername());
+	    newUser.setEmail(user.getEmail());
 	    newUser.setFirstName(user.getFirstName());
 	    newUser.setLastName(user.getLastName());
 	    newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
-		newUser.setAge(user.getAge());
-		newUser.setSalary(user.getSalary());
+		newUser.setAvatar(user.getAvatar());
         return userRepository.save(newUser);
     }
 }
