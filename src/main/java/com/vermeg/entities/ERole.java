@@ -1,8 +1,13 @@
 package com.vermeg.entities;
 
 public enum ERole {
-    SUPER_ADMIN,
-    ADMIN,
-    USER,
-    GUEST
+    ROLE_ADMIN,
+    ROLE_DIRECTEUR,
+    ROLE_TEAM_MANAGER,
+    ROLE_PROJECT_MANAGER,
+    ROLE_TEAM_LEADER,
+    ROLE_SOFTWARE_DEVELOPER,
+    ROLE_QUALITY_ANALYSTE,
+    ROLE_HELP_DESK,
+    ROLE_IT
 }

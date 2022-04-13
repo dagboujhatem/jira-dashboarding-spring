@@ -23,7 +23,7 @@ public class User {
     @Column
     private String lastName;
     @Column
-    private String role;
+    private ERole role;
     @Column
     private String email;
     @Column
