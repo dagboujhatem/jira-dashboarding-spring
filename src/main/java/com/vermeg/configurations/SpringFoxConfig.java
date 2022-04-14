@@ -48,7 +48,7 @@ public class SpringFoxConfig {
                 .termsOfServiceUrl("https://gitee.com/log4j/pig")
                 .contact(new Contact("Hammami Nadia",
                         "https://github.com/Nadia-Hammami",
-                        "Nadia-Hammami@gmail.com"))
+                        "hammaminadia293@gmail.com"))
                 .build();
     }
 

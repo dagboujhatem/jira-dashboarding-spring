@@ -37,11 +37,12 @@ public class Application implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+        this.userRepository.deleteAll();
         User user = new User();
-        user.setFirstName("hammami");
-        user.setLastName("nadia");
+        user.setFirstName("Hammami");
+        user.setLastName("Nadia");
         user.setRole(ERole.ROLE_HELP_DESK);
-        user.setEmail("nadia@gmail.com");
+        user.setEmail("hammaminadia293@gmail.com");
         user.setPassword(this.passwordEncoder().encode("123456789"));
         this.userRepository.save(user);
     }

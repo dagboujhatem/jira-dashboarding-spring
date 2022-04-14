@@ -19,14 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58e7b301-ef15-41fa-920d-e14a8d4aa2bc" name="Default Changelist" comment="refactor roles">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/payload/responses/TokenResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/payload/responses/TokenResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/API.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/acript.sql" beforeDir="false" />
+    <list default="true" id="58e7b301-ef15-41fa-920d-e14a8d4aa2bc" name="Default Changelist" comment="refactoring">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/configurations/SpringFoxConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/configurations/SpringFoxConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +68,8 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -125,6 +123,8 @@
       <workItem from="1649704398372" duration="754000" />
       <workItem from="1649849679512" duration="1191000" />
       <workItem from="1649868933781" duration="11499000" />
+      <workItem from="1649924726017" duration="1548000" />
+      <workItem from="1649950992875" duration="1629000" />
     </task>
     <task id="LOCAL-00001" summary="add swagger api documentation">
       <created>1649877896064</created>
@@ -147,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649888765292</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="refactoring">
+      <created>1649889236951</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1649889236951</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,55 +170,61 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="add swagger api documentation" />
     <MESSAGE value="refactor roles" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor roles" />
+    <MESSAGE value="refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
   </component>
   <component name="WindowStateProjectService">
     <state x="140" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1649878481064">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="140" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1649878481064" />
-    <state width="1323" height="230" key="GridCell.Tab.0.bottom" timestamp="1649888607849">
+    <state width="1323" height="346" key="GridCell.Tab.0.bottom" timestamp="1649951841940">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="230" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1649888607849" />
-    <state width="1323" height="230" key="GridCell.Tab.0.center" timestamp="1649888607849">
+    <state width="1323" height="346" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1649951841940" />
+    <state width="1323" height="346" key="GridCell.Tab.0.center" timestamp="1649951841940">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="230" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1649888607849" />
-    <state width="1323" height="230" key="GridCell.Tab.0.left" timestamp="1649888607849">
+    <state width="1323" height="346" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1649951841940" />
+    <state width="1323" height="346" key="GridCell.Tab.0.left" timestamp="1649951841940">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="230" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1649888607849" />
-    <state width="1323" height="230" key="GridCell.Tab.0.right" timestamp="1649888607849">
+    <state width="1323" height="346" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1649951841940" />
+    <state width="1323" height="346" key="GridCell.Tab.0.right" timestamp="1649951841940">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="230" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1649888607849" />
-    <state width="1323" height="230" key="GridCell.Tab.1.bottom" timestamp="1649888607849">
+    <state width="1323" height="346" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1649951841940" />
+    <state width="1323" height="346" key="GridCell.Tab.1.bottom" timestamp="1649951841940">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="230" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1649888607849" />
-    <state width="1323" height="230" key="GridCell.Tab.1.center" timestamp="1649888607849">
+    <state width="1323" height="346" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1649951841940" />
+    <state width="1323" height="346" key="GridCell.Tab.1.center" timestamp="1649951841940">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="230" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1649888607849" />
-    <state width="1323" height="230" key="GridCell.Tab.1.left" timestamp="1649888607849">
+    <state width="1323" height="346" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1649951841940" />
+    <state width="1323" height="346" key="GridCell.Tab.1.left" timestamp="1649951841940">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="230" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1649888607849" />
-    <state width="1323" height="230" key="GridCell.Tab.1.right" timestamp="1649888607849">
+    <state width="1323" height="346" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1649951841940" />
+    <state width="1323" height="346" key="GridCell.Tab.1.right" timestamp="1649951841940">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="230" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1649888607849" />
-    <state x="389" y="0" width="587" height="728" key="find.popup" timestamp="1649889096485">
+    <state width="1323" height="346" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1649951841940" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1649890102597">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="389" y="0" width="587" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1649889096485" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1649890102597" />
+    <state x="389" y="0" width="587" height="728" key="find.popup" timestamp="1649889707666">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="389" y="0" width="587" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1649889707666" />
   </component>
   <component name="masterDetails">
     <states>
