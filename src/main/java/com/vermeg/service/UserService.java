@@ -11,4 +11,7 @@ public interface UserService {
     User findById(int id);
     User update(User updatedUser);
     void delete(int id);
+    // Profile section
+    User getProfile();
+    void updateProfile();
 }

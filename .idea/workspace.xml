@@ -20,9 +20,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58e7b301-ef15-41fa-920d-e14a8d4aa2bc" name="Default Changelist" comment="refactoring">
+      <change afterPath="$PROJECT_DIR$/.idea/resourceBundles.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/configurations/LocaleResolverConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/controllers/WelcomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/entities/PasswordResetToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/exceptions/EmailAlreadyUsedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/exceptions/ResourceNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/repositories/PasswordResetTokenRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/service/ForgotPassword.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/service/impl/ForgotPasswordServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages_fr.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/vermeg/configurations/LocaleResolverConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/vermeg/controllers/WelcomeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/vermeg/entities/PasswordResetToken.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/vermeg/exceptions/EmailAlreadyUsedException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/vermeg/exceptions/ResourceNotFoundException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/vermeg/repositories/PasswordResetTokenRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/vermeg/service/ForgotPassword.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/vermeg/service/impl/ForgotPasswordServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/i18n/messages.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/i18n/messages_fr.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/configurations/SpringFoxConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/configurations/SpringFoxConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/controllers/ForgotPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/controllers/ForgotPasswordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/controllers/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/controllers/ProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/configurations/SpringFoxConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/configurations/SpringFoxConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/controllers/ForgotPasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/controllers/ForgotPasswordController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/controllers/ProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/controllers/ProfileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/security/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/security/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/service/impl/UserServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +74,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -82,6 +118,12 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\spring-angular\spring-boot-back\src\main\resources\i18n" />
+      <recent name="C:\laragon\www\spring-angular\spring-boot-back\src\main\resources" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
@@ -125,6 +167,8 @@
       <workItem from="1649868933781" duration="11499000" />
       <workItem from="1649924726017" duration="1548000" />
       <workItem from="1649950992875" duration="1629000" />
+      <workItem from="1650397174974" duration="4590000" />
+      <workItem from="1650470950707" duration="9766000" />
     </task>
     <task id="LOCAL-00001" summary="add swagger api documentation">
       <created>1649877896064</created>
@@ -181,50 +225,72 @@
     <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="140" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1649878481064">
+    <state x="140" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1650474481766">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="140" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650474481766" />
     <state x="140" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1649878481064" />
-    <state width="1323" height="346" key="GridCell.Tab.0.bottom" timestamp="1649951841940">
+    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1650474708641">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="346" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1649951841940" />
-    <state width="1323" height="346" key="GridCell.Tab.0.center" timestamp="1649951841940">
+    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650474708641" />
+    <state width="1323" height="2" key="GridCell.Tab.0.bottom" timestamp="1650484441342">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="346" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1649951841940" />
-    <state width="1323" height="346" key="GridCell.Tab.0.left" timestamp="1649951841940">
+    <state width="1323" height="2" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650484441342" />
+    <state width="1323" height="148" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1650408144606" />
+    <state width="1323" height="2" key="GridCell.Tab.0.center" timestamp="1650484441342">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="346" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1649951841940" />
-    <state width="1323" height="346" key="GridCell.Tab.0.right" timestamp="1649951841940">
+    <state width="1323" height="2" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650484441342" />
+    <state width="1323" height="148" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1650408144606" />
+    <state width="1323" height="2" key="GridCell.Tab.0.left" timestamp="1650484441342">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="346" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1649951841940" />
-    <state width="1323" height="346" key="GridCell.Tab.1.bottom" timestamp="1649951841940">
+    <state width="1323" height="2" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650484441342" />
+    <state width="1323" height="148" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1650408144606" />
+    <state width="1323" height="2" key="GridCell.Tab.0.right" timestamp="1650484441342">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="346" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1649951841940" />
-    <state width="1323" height="346" key="GridCell.Tab.1.center" timestamp="1649951841940">
+    <state width="1323" height="2" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650484441342" />
+    <state width="1323" height="148" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1650408144606" />
+    <state width="1323" height="2" key="GridCell.Tab.1.bottom" timestamp="1650484441342">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="346" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1649951841940" />
-    <state width="1323" height="346" key="GridCell.Tab.1.left" timestamp="1649951841940">
+    <state width="1323" height="2" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650484441342" />
+    <state width="1323" height="148" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1650408144607" />
+    <state width="1323" height="2" key="GridCell.Tab.1.center" timestamp="1650484441342">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="346" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1649951841940" />
-    <state width="1323" height="346" key="GridCell.Tab.1.right" timestamp="1649951841940">
+    <state width="1323" height="2" key="GridCell.Tab.1.center/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650484441342" />
+    <state width="1323" height="148" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1650408144606" />
+    <state width="1323" height="2" key="GridCell.Tab.1.left" timestamp="1650484441342">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="346" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1649951841940" />
+    <state width="1323" height="2" key="GridCell.Tab.1.left/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650484441342" />
+    <state width="1323" height="148" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1650408144606" />
+    <state width="1323" height="2" key="GridCell.Tab.1.right" timestamp="1650484441342">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="2" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650484441342" />
+    <state width="1323" height="148" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1650408144606" />
+    <state width="498" height="488" key="SwitcherDM" timestamp="1650484120031">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="498" height="488" key="SwitcherDM/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650484120031" />
     <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1649890102597">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1649890102597" />
-    <state x="389" y="0" width="587" height="728" key="find.popup" timestamp="1649889707666">
+    <state x="389" y="0" width="587" height="728" key="find.popup" timestamp="1650483351417">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="389" y="0" width="587" height="728" key="find.popup/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650483351417" />
     <state x="389" y="0" width="587" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1649889707666" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1650398662038">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650398662038" />
   </component>
   <component name="masterDetails">
     <states>

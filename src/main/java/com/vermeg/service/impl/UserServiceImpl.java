@@ -1,11 +1,15 @@
 package com.vermeg.service.impl;
 
+import com.vermeg.exceptions.ResourceNotFoundException;
 import com.vermeg.repositories.UserRepository;
 import com.vermeg.entities.User;
 import com.vermeg.service.UserService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -22,12 +26,16 @@ import java.util.Optional;
 @Service
 @Transactional
 public class UserServiceImpl implements UserDetailsService ,UserService{
-	
+
+	@Autowired
+	MessageSource messageSource;
+
 	@Autowired
 	private UserRepository userRepository;
 
 	@Autowired
 	private BCryptPasswordEncoder bcryptEncoder;
+
 
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 		User user = userRepository.findByEmail(email);
@@ -48,7 +56,12 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
 	}
 
 	public void delete(int id) {
-		userRepository.deleteById(id);
+		Optional<User> userData = this.userRepository.findById(id);
+		if (userData.isPresent()) {
+			this.userRepository.deleteById(id);
+		} else {
+			throw new ResourceNotFoundException("User not found");
+		}
 	}
 
 	public User findUserByEmail(String email) {
@@ -57,7 +70,7 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
 
 	public User findById(int id) {
 		Optional<User> optionalUser = userRepository.findById(id);
-		return optionalUser.isPresent() ? optionalUser.get() : null;
+		return optionalUser.orElseThrow(() -> new ResourceNotFoundException("User not found"));
 	}
 
     public User update(User updatedUser) {
@@ -78,4 +91,13 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
 		newUser.setAvatar(user.getAvatar());
         return userRepository.save(newUser);
     }
+
+	// Profile section
+	public User getProfile(){
+		return new User();
+	}
+
+	public void updateProfile(){
+
+	}
 }
