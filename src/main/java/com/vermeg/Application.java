@@ -42,13 +42,22 @@ public class Application implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         // Insert default user (with ADMIN role as default)
         this.userRepository.deleteAll();
-        User user = new User();
-        user.setFirstName("Hammami");
-        user.setLastName("Nadia");
-        user.setRole(ERole.ROLE_ADMIN);
-        user.setEmail("hammaminadia293@gmail.com");
-        user.setPassword(this.passwordEncoder().encode("123456789"));
-        this.userRepository.save(user);
+        User user1 = new User();
+        user1.setFirstName("Hammami");
+        user1.setLastName("Nadia");
+        user1.setRole(ERole.ROLE_ADMIN);
+        user1.setEmail("hammaminadia293@gmail.com");
+        user1.setPassword(this.passwordEncoder().encode("123456789"));
+        this.userRepository.save(user1);
+
+        this.userRepository.deleteAll();
+        User user2 = new User();
+        user2.setFirstName("Dagbouj");
+        user2.setLastName("Hatem");
+        user2.setRole(ERole.ROLE_ADMIN);
+        user2.setEmail("dagboujhatem@gmail.com");
+        user2.setPassword(this.passwordEncoder().encode("123456789"));
+        this.userRepository.save(user2);
         // Files Storage section
         storageService.deleteAll();
         storageService.init();

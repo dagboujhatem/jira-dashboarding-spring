@@ -7,6 +7,7 @@ import com.vermeg.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.http.MediaType;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -31,9 +32,9 @@ public class ProfileController {
         return new ApiResponse<>(200, messageResponse, userProfile);
     }
 
-    @RequestMapping(value = "profile", method = RequestMethod.PUT, consumes = {"multipart/form-data"})
+    @RequestMapping(value = "profile", method = RequestMethod.PUT, consumes = { MediaType.MULTIPART_FORM_DATA_VALUE})
     public ApiResponse<Object> updateProfile(Principal principal,
-         @RequestParam(value = "properties", required = false) User updatedUser,
+         @ModelAttribute(value = "properties") User updatedUser,
          @RequestParam(value = "file", required = false) MultipartFile file) throws EmailAlreadyUsedException {
         userService.updateProfile(principal, updatedUser, file);
         String messageResponse = messageSource.getMessage("common.updateProfile",
