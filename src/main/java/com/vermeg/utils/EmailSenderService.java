@@ -22,16 +22,6 @@ public class EmailSenderService {
     private final JavaMailSender emailSender;
     private final SpringTemplateEngine templateEngine;
 
-    public void sendEmail(String recipientEmail, String subject){
-        System.out.println("Sending Email...");
-        SimpleMailMessage mail = new SimpleMailMessage();
-        mail.setTo(recipientEmail);
-        mail.setSubject(subject);
-        mail.setText("Hello World \n Spring Boot Email");
-        // Send mail with javaMailSender
-        emailSender.send(mail);
-    }
-
     public void sendSimpleMessage(Email email) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom(email.getFrom());

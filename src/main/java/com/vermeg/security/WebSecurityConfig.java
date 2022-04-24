@@ -51,7 +51,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/v2/api-docs", "/configuration/**",
                         "/swagger*/**", "/webjars/**",
                         "/forgot-password",
-                        "/email/**",
                         "/reset-password").permitAll()
                 // all other requests need to be authenticated
                 .anyRequest().authenticated()

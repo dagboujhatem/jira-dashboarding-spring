@@ -6,8 +6,6 @@ import com.vermeg.payload.requests.ResetPasswordRequest;
 import com.vermeg.payload.responses.ApiResponse;
 import com.vermeg.payload.responses.TokenResponse;
 import com.vermeg.service.impl.ForgotPasswordServiceImpl;
-import com.vermeg.utils.Email;
-import com.vermeg.utils.EmailSenderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -39,18 +37,5 @@ public class ForgotPasswordController {
         String messageResponse = messageSource.getMessage("common.resetPassword",
                 null, LocaleContextHolder.getLocale());
         return new ApiResponse<>(200, messageResponse,null);
-    }
-
-    @Autowired
-    private EmailSenderService emailSenderService;
-
-    @PostMapping("/email/send/html")
-    public void sendHtmlMessage(@RequestBody Email email) throws MessagingException {
-        emailSenderService.sendHtmlMessage(email);
-    }
-
-    @PostMapping("email/send")
-    public void sendSimpleMessage(@RequestBody Email email) {
-        emailSenderService.sendSimpleMessage(email);
     }
 }
