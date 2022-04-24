@@ -12,9 +12,9 @@ public interface UserService {
     List<User> findAll();
     User save(User user) throws EmailAlreadyUsedException;
     User findById(int id);
-    User update(User updatedUser);
+    User update(User updatedUser) throws EmailAlreadyUsedException;
     void delete(int id);
     // Profile section
     User getProfile(Principal principal);
-    void updateProfile(Principal principal, User updatedUser, MultipartFile file);
+    void updateProfile(Principal principal, User updatedUser, MultipartFile file) throws EmailAlreadyUsedException;
 }

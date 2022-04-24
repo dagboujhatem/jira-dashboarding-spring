@@ -1,6 +1,7 @@
 package com.vermeg.controllers;
 
 import com.vermeg.entities.User;
+import com.vermeg.exceptions.EmailAlreadyUsedException;
 import com.vermeg.payload.responses.ApiResponse;
 import com.vermeg.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +33,7 @@ public class ProfileController {
     @RequestMapping(value = "profile", method = RequestMethod.PUT, consumes = {"multipart/form-data"})
     public ApiResponse<Object> updateProfile(Principal principal,
          @RequestParam(value = "properties", required = false) User updatedUser,
-         @RequestParam(value = "file", required = false) MultipartFile file){
+         @RequestParam(value = "file", required = false) MultipartFile file) throws EmailAlreadyUsedException {
         userService.updateProfile(principal, updatedUser, file);
         String messageResponse = messageSource.getMessage("common.updateProfile",
                 null, LocaleContextHolder.getLocale());

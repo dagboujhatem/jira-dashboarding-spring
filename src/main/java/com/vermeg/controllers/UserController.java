@@ -48,7 +48,7 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-    public ApiResponse<User> update(@RequestBody User updatedUser) {
+    public ApiResponse<User> update(@RequestBody User updatedUser) throws EmailAlreadyUsedException {
         String modelName = messageSource.getMessage("models.user",null , LocaleContextHolder.getLocale());
         String messageResponse = messageSource.getMessage("common.update",
                 new Object[] {modelName}, LocaleContextHolder.getLocale());

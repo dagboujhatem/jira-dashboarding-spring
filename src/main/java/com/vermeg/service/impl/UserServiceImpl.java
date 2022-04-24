@@ -8,6 +8,7 @@ import com.vermeg.service.UserService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -44,7 +45,9 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 		User user = userRepository.findByEmail(email);
 		if(user == null){
-			throw new UsernameNotFoundException("Invalid username or password.");
+			String message = messageSource.getMessage("common.usernameNotFound",
+					null, LocaleContextHolder.getLocale());
+			throw new UsernameNotFoundException(message);
 		}
 		return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), getAuthority());
 	}
@@ -64,7 +67,10 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
 		if (userData.isPresent()) {
 			this.userRepository.deleteById(id);
 		} else {
-			throw new ResourceNotFoundException("User not found");
+			String modelName = messageSource.getMessage("models.user",null , LocaleContextHolder.getLocale());
+			String message = messageSource.getMessage("common.notFound",
+					new Object[] {modelName}, LocaleContextHolder.getLocale());
+			throw new ResourceNotFoundException(message);
 		}
 	}
 
@@ -74,12 +80,20 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
 
 	public User findById(int id) {
 		Optional<User> optionalUser = userRepository.findById(id);
-		return optionalUser.orElseThrow(() -> new ResourceNotFoundException("User not found"));
+		String modelName = messageSource.getMessage("models.user",null , LocaleContextHolder.getLocale());
+		String message = messageSource.getMessage("common.notFound",
+				new Object[] {modelName}, LocaleContextHolder.getLocale());
+		return optionalUser.orElseThrow(() -> new ResourceNotFoundException(message));
 	}
 
-    public User update(User updatedUser) {
+    public User update(User updatedUser) throws EmailAlreadyUsedException {
         User user = findById(updatedUser.getId());
         if(user != null) {
+        	if (userRepository.existsByEmailAndIdNot(updatedUser.getEmail(), updatedUser.getId())){
+				String message = messageSource.getMessage("common.emailAlreadyUsed",
+						null, LocaleContextHolder.getLocale());
+				throw new EmailAlreadyUsedException(message);
+			}
             BeanUtils.copyProperties(updatedUser, user, "password");
 			if(!updatedUser.getPassword().isEmpty()){
 				user.setPassword(bcryptEncoder.encode(user.getPassword()));
@@ -92,7 +106,9 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
     public User save(User user) throws EmailAlreadyUsedException {
 		// test if email already used
 		if (this.userRepository.existsByEmail(user.getEmail())) {
-			throw new EmailAlreadyUsedException("Error: Email is already in use!");
+			String message = messageSource.getMessage("common.emailAlreadyUsed",
+					null, LocaleContextHolder.getLocale());
+			throw new EmailAlreadyUsedException(message);
 		}
 		// Create new user account
 	    User newUser = new User();
@@ -107,14 +123,25 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
 	// Profile section
 	public User getProfile(Principal principal){
 		if(!userRepository.existsByEmail(principal.getName())){
-			throw new ResourceNotFoundException("User not found");
+			String modelName = messageSource.getMessage("models.user",null , LocaleContextHolder.getLocale());
+			String message = messageSource.getMessage("common.notFound",
+					new Object[] {modelName}, LocaleContextHolder.getLocale());
+			throw new ResourceNotFoundException(message);
 		}
 		return userRepository.findByEmail(principal.getName());
 	}
 
-	public void updateProfile(Principal principal, User updatedUser, MultipartFile file){
+	public void updateProfile(Principal principal, User updatedUser, MultipartFile file) throws EmailAlreadyUsedException {
 		if(!userRepository.existsByEmail(principal.getName())){
-			throw new ResourceNotFoundException("User not found");
+			String modelName = messageSource.getMessage("models.user",null , LocaleContextHolder.getLocale());
+			String message = messageSource.getMessage("common.notFound",
+					new Object[] {modelName}, LocaleContextHolder.getLocale());
+			throw new ResourceNotFoundException(message);
+		}
+		if (userRepository.existsByEmailAndIdNot(updatedUser.getEmail(), updatedUser.getId())){
+			String message = messageSource.getMessage("common.emailAlreadyUsed",
+					null, LocaleContextHolder.getLocale());
+			throw new EmailAlreadyUsedException(message);
 		}
 		filesStorage.save(file);
 		User user = userRepository.findByEmail(principal.getName());
