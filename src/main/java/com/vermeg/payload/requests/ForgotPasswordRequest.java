@@ -6,10 +6,8 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 @Data
-public class LoginRequest {
+public class ForgotPasswordRequest {
+    @NotBlank
     @Email
-    @NotBlank
     private String email;
-    @NotBlank
-    private String password;
 }

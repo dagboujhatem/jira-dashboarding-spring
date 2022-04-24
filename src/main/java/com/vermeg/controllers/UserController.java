@@ -1,5 +1,6 @@
 package com.vermeg.controllers;
 
+import com.vermeg.exceptions.EmailAlreadyUsedException;
 import com.vermeg.payload.responses.ApiResponse;
 import com.vermeg.entities.User;
 import com.vermeg.service.UserService;
@@ -23,7 +24,7 @@ public class UserController {
     private UserService userService ;
 
     @PostMapping
-    public ApiResponse<User> saveUser(@RequestBody User user){
+    public ApiResponse<User> saveUser(@RequestBody User user) throws EmailAlreadyUsedException {
         String modelName = messageSource.getMessage("models.user",null , LocaleContextHolder.getLocale());
         String messageResponse = messageSource.getMessage("common.create",
                 new Object[] {modelName}, LocaleContextHolder.getLocale());

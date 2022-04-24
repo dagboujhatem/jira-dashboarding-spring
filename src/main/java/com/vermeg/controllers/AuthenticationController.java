@@ -12,6 +12,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/auth")
@@ -27,7 +29,7 @@ public class AuthenticationController {
     private UserService userService;
 
     @RequestMapping(value = "login", method = RequestMethod.POST)
-    public ApiResponse<TokenResponse> login(@RequestBody LoginRequest loginRequest) throws AuthenticationException {
+    public ApiResponse<TokenResponse> login(@Valid @RequestBody LoginRequest loginRequest) throws AuthenticationException {
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
         final User user = userService.findUserByEmail(loginRequest.getEmail());
         final String token = jwtTokenUtil.generateToken(user);

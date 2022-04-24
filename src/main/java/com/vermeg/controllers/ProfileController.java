@@ -1,29 +1,41 @@
 package com.vermeg.controllers;
 
+import com.vermeg.entities.User;
 import com.vermeg.payload.responses.ApiResponse;
-import com.vermeg.payload.responses.TokenResponse;
 import com.vermeg.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.security.Principal;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/profile")
 public class ProfileController {
 
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
-    public ApiResponse<Object> getProfile(){
-        return new ApiResponse<>(200, "success",null);
+    @Autowired
+    MessageSource messageSource;
+
+    @RequestMapping(value = "profile", method = RequestMethod.GET)
+    public ApiResponse<Object> getProfile(Principal principal){
+        User userProfile = userService.getProfile(principal);
+        String messageResponse = messageSource.getMessage("common.getProfile",
+                null, LocaleContextHolder.getLocale());
+        return new ApiResponse<>(200, messageResponse, userProfile);
     }
 
-    @RequestMapping(value = "", method = RequestMethod.POST)
-    public ApiResponse<Object> updateProfile(){
-        return new ApiResponse<>(200, "success",null);
+    @RequestMapping(value = "profile", method = RequestMethod.PUT, consumes = {"multipart/form-data"})
+    public ApiResponse<Object> updateProfile(Principal principal,
+         @RequestParam(value = "properties", required = false) User updatedUser,
+         @RequestParam(value = "file", required = false) MultipartFile file){
+        userService.updateProfile(principal, updatedUser, file);
+        String messageResponse = messageSource.getMessage("common.updateProfile",
+                null, LocaleContextHolder.getLocale());
+        return new ApiResponse<>(200, messageResponse,null);
     }
 }

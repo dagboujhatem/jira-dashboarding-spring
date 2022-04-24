@@ -50,7 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/auth/**", "/welcome/**",
                         "/v2/api-docs", "/configuration/**",
                         "/swagger*/**", "/webjars/**",
-                        "/forgot-password/**",
+                        "/forgot-password",
                         "/reset-password").permitAll()
                 // all other requests need to be authenticated
                 .anyRequest().authenticated()

@@ -109,6 +109,10 @@
           <element id="library" level="project" name="Maven: jakarta.xml.bind:jakarta.xml.bind-api:2.3.2" />
           <element id="library" level="project" name="Maven: org.codehaus.woodstox:stax2-api:4.2" />
           <element id="library" level="project" name="Maven: com.fasterxml.woodstox:woodstox-core:6.0.3" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-mail:2.2.2.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context-support:5.2.2.RELEASE" />
+          <element id="library" level="project" name="Maven: com.sun.mail:jakarta.mail:1.6.4" />
+          <element id="library" level="project" name="Maven: com.sun.activation:jakarta.activation:1.2.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">

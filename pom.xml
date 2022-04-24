@@ -59,6 +59,12 @@
             <version>2.10.2</version>
         </dependency>
         <!-- end Swagger ui dependencies -->
+        <!-- send email -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+        <!-- end send email -->
     </dependencies>
 
     <properties>

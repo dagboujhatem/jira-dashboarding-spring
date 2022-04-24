@@ -24,7 +24,7 @@ public class User {
     private String lastName;
     @Column
     private ERole role;
-    @Column
+    @Column(unique=true)
     private String email;
     @Column
     private String password;

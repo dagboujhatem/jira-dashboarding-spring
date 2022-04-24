@@ -2,14 +2,12 @@ package com.vermeg.payload.requests;
 
 import lombok.Data;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 @Data
-public class LoginRequest {
-    @Email
+public class ResetPasswordRequest {
     @NotBlank
-    private String email;
+    String token;
     @NotBlank
-    private String password;
+    String password;
 }

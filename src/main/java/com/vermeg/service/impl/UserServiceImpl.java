@@ -1,5 +1,6 @@
 package com.vermeg.service.impl;
 
+import com.vermeg.exceptions.EmailAlreadyUsedException;
 import com.vermeg.exceptions.ResourceNotFoundException;
 import com.vermeg.repositories.UserRepository;
 import com.vermeg.entities.User;
@@ -7,16 +8,16 @@ import com.vermeg.service.UserService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.transaction.Transactional;
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -35,6 +36,9 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
 
 	@Autowired
 	private BCryptPasswordEncoder bcryptEncoder;
+
+	@Autowired
+	private FilesStorageServiceImpl filesStorage;
 
 
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
@@ -77,27 +81,49 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
         User user = findById(updatedUser.getId());
         if(user != null) {
             BeanUtils.copyProperties(updatedUser, user, "password");
+			if(!updatedUser.getPassword().isEmpty()){
+				user.setPassword(bcryptEncoder.encode(user.getPassword()));
+			}
             userRepository.save(user);
         }
         return updatedUser;
     }
 
-    public User save(User user) {
+    public User save(User user) throws EmailAlreadyUsedException {
+		// test if email already used
+		if (this.userRepository.existsByEmail(user.getEmail())) {
+			throw new EmailAlreadyUsedException("Error: Email is already in use!");
+		}
+		// Create new user account
 	    User newUser = new User();
-	    newUser.setEmail(user.getEmail());
 	    newUser.setFirstName(user.getFirstName());
-	    newUser.setLastName(user.getLastName());
-	    newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
+		newUser.setLastName(user.getLastName());
+		newUser.setEmail(user.getEmail());
+		newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
 		newUser.setAvatar(user.getAvatar());
         return userRepository.save(newUser);
     }
 
 	// Profile section
-	public User getProfile(){
-		return new User();
+	public User getProfile(Principal principal){
+		if(!userRepository.existsByEmail(principal.getName())){
+			throw new ResourceNotFoundException("User not found");
+		}
+		return userRepository.findByEmail(principal.getName());
 	}
 
-	public void updateProfile(){
-
+	public void updateProfile(Principal principal, User updatedUser, MultipartFile file){
+		if(!userRepository.existsByEmail(principal.getName())){
+			throw new ResourceNotFoundException("User not found");
+		}
+		filesStorage.save(file);
+		User user = userRepository.findByEmail(principal.getName());
+		user.setFirstName(updatedUser.getFirstName());
+		user.setLastName(updatedUser.getLastName());
+		user.setEmail(updatedUser.getEmail());
+		if(!updatedUser.getPassword().isEmpty()){
+			user.setPassword(bcryptEncoder.encode(updatedUser.getPassword()));
+		}
+		userRepository.save(user);
 	}
 }

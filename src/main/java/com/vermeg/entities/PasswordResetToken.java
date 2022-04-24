@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "reset-password-tokens")
+@Table(name = "reset_password_tokens")
 @Getter
 @Setter
 @AllArgsConstructor

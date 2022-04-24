@@ -27,7 +27,7 @@ public class LocaleResolverConfig {
     public ResourceBundleMessageSource messageSource() {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
         messageSource.setCacheSeconds(5);
-        messageSource.setDefaultEncoding("UTF-8");
+        messageSource.setDefaultEncoding("ISO-8859-1");
         messageSource.setFallbackToSystemLocale(true);
         messageSource.setDefaultLocale(Locale.US);
         messageSource.setUseCodeAsDefaultMessage(true);
