@@ -19,17 +19,22 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58e7b301-ef15-41fa-920d-e14a8d4aa2bc" name="Default Changelist" comment="fix internationalisation">
+    <list default="true" id="58e7b301-ef15-41fa-920d-e14a8d4aa2bc" name="Default Changelist" comment="refactor internationalisation &amp; use unique mailfor each account">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/controllers/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/controllers/ProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/security/ExceptionAdvice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/security/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/security/JwtTokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/security/JwtTokenUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/i18n/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/i18n/messages_fr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages_fr.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/repositories/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/controllers/ProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/controllers/ProfileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/security/ExceptionAdvice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/security/JwtAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/security/JwtAuthenticationFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/security/JwtTokenUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/security/JwtTokenUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/i18n/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/i18n/messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/i18n/messages_fr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/i18n/messages_fr.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +149,7 @@
       <workItem from="1650515734090" duration="1110000" />
       <workItem from="1650728257029" duration="1942000" />
       <workItem from="1650731891194" duration="11654000" />
-      <workItem from="1650795663556" duration="10321000" />
+      <workItem from="1650795663556" duration="13738000" />
     </task>
     <task id="LOCAL-00001" summary="add swagger api documentation">
       <created>1649877896064</created>
@@ -195,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650804203699</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="refactor internationalisation &amp; use unique mailfor each account">
+      <created>1650806800141</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1650806800141</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,7 +233,8 @@
     <MESSAGE value="refactoring" />
     <MESSAGE value="add internationalisation &amp; exceptions" />
     <MESSAGE value="fix internationalisation" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix internationalisation" />
+    <MESSAGE value="refactor internationalisation &amp; use unique mailfor each account" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor internationalisation &amp; use unique mailfor each account" />
   </component>
   <component name="WindowStateProjectService">
     <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1650743699507">
@@ -237,46 +250,46 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650474708641" />
-    <state width="1323" height="354" key="GridCell.Tab.0.bottom" timestamp="1650806146856">
+    <state width="1323" height="258" key="GridCell.Tab.0.bottom" timestamp="1650809611810">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="218" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650486836732" />
-    <state width="1323" height="354" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1650806146856" />
-    <state width="1323" height="354" key="GridCell.Tab.0.center" timestamp="1650806146856">
+    <state width="1323" height="258" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1650809611810" />
+    <state width="1323" height="258" key="GridCell.Tab.0.center" timestamp="1650809611809">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="218" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650486836732" />
-    <state width="1323" height="354" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1650806146856" />
-    <state width="1323" height="354" key="GridCell.Tab.0.left" timestamp="1650806146856">
+    <state width="1323" height="258" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1650809611809" />
+    <state width="1323" height="258" key="GridCell.Tab.0.left" timestamp="1650809611809">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="218" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650486836732" />
-    <state width="1323" height="354" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1650806146856" />
-    <state width="1323" height="354" key="GridCell.Tab.0.right" timestamp="1650806146856">
+    <state width="1323" height="258" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1650809611809" />
+    <state width="1323" height="258" key="GridCell.Tab.0.right" timestamp="1650809611810">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="218" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650486836732" />
-    <state width="1323" height="354" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1650806146856" />
-    <state width="1323" height="354" key="GridCell.Tab.1.bottom" timestamp="1650806146856">
+    <state width="1323" height="258" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1650809611810" />
+    <state width="1323" height="258" key="GridCell.Tab.1.bottom" timestamp="1650809611811">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="218" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650486836732" />
-    <state width="1323" height="354" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1650806146856" />
-    <state width="1323" height="354" key="GridCell.Tab.1.center" timestamp="1650806146856">
+    <state width="1323" height="258" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1650809611811" />
+    <state width="1323" height="258" key="GridCell.Tab.1.center" timestamp="1650809611810">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="218" key="GridCell.Tab.1.center/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650486836732" />
-    <state width="1323" height="354" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1650806146856" />
-    <state width="1323" height="354" key="GridCell.Tab.1.left" timestamp="1650806146856">
+    <state width="1323" height="258" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1650809611810" />
+    <state width="1323" height="258" key="GridCell.Tab.1.left" timestamp="1650809611810">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="218" key="GridCell.Tab.1.left/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650486836732" />
-    <state width="1323" height="354" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1650806146856" />
-    <state width="1323" height="354" key="GridCell.Tab.1.right" timestamp="1650806146856">
+    <state width="1323" height="258" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1650809611810" />
+    <state width="1323" height="258" key="GridCell.Tab.1.right" timestamp="1650809611810">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="218" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650486836732" />
-    <state width="1323" height="354" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1650806146856" />
+    <state width="1323" height="258" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1650809611810" />
     <state width="498" height="488" key="SwitcherDM" timestamp="1650484120031">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -285,11 +298,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1649890102597" />
-    <state x="389" y="0" width="587" height="728" key="find.popup" timestamp="1650804731587">
+    <state x="389" y="0" width="587" height="728" key="find.popup" timestamp="1650809075824">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="389" y="0" width="587" height="728" key="find.popup/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650485742927" />
-    <state x="389" y="0" width="587" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1650804731587" />
+    <state x="389" y="0" width="587" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1650809075824" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1650733514122">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

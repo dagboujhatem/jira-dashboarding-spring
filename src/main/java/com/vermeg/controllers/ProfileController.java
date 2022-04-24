@@ -7,6 +7,7 @@ import com.vermeg.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -23,8 +24,8 @@ public class ProfileController {
     MessageSource messageSource;
 
     @RequestMapping(value = "profile", method = RequestMethod.GET)
-    public ApiResponse<Object> getProfile(Principal principal){
-        User userProfile = userService.getProfile(principal);
+    public ApiResponse<Object> getProfile(Authentication authentication){
+        User userProfile = userService.getProfile(authentication);
         String messageResponse = messageSource.getMessage("common.getProfile",
                 null, LocaleContextHolder.getLocale());
         return new ApiResponse<>(200, messageResponse, userProfile);

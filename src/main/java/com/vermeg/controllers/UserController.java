@@ -48,11 +48,11 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-    public ApiResponse<User> update(@RequestBody User updatedUser) throws EmailAlreadyUsedException {
+    public ApiResponse<User> update(@PathVariable int id, @RequestBody User updatedUser) throws EmailAlreadyUsedException {
         String modelName = messageSource.getMessage("models.user",null , LocaleContextHolder.getLocale());
         String messageResponse = messageSource.getMessage("common.update",
                 new Object[] {modelName}, LocaleContextHolder.getLocale());
-        return new ApiResponse<>(HttpStatus.OK.value(), messageResponse, userService.update(updatedUser));
+        return new ApiResponse<>(HttpStatus.OK.value(), messageResponse, userService.update(id, updatedUser));
     }
 
     @DeleteMapping("/{id}")

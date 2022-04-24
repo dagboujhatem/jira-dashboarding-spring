@@ -1,5 +1,6 @@
 package com.vermeg.service.impl;
 
+import com.vermeg.entities.ERole;
 import com.vermeg.exceptions.EmailAlreadyUsedException;
 import com.vermeg.exceptions.ResourceNotFoundException;
 import com.vermeg.repositories.UserRepository;
@@ -9,6 +10,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -49,11 +51,11 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
 					null, LocaleContextHolder.getLocale());
 			throw new UsernameNotFoundException(message);
 		}
-		return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), getAuthority());
+		return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), getAuthority(user.getRole()));
 	}
 
-	private List<SimpleGrantedAuthority> getAuthority() {
-		return Arrays.asList(new SimpleGrantedAuthority("ROLE_ADMIN"));
+	private List<SimpleGrantedAuthority> getAuthority(ERole role) {
+		return Arrays.asList(new SimpleGrantedAuthority(role.toString()));
 	}
 
 	public List<User> findAll() {
@@ -86,8 +88,8 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
 		return optionalUser.orElseThrow(() -> new ResourceNotFoundException(message));
 	}
 
-    public User update(User updatedUser) throws EmailAlreadyUsedException {
-        User user = findById(updatedUser.getId());
+    public User update(int id, User updatedUser) throws EmailAlreadyUsedException {
+        User user = findById(id);
         if(user != null) {
         	if (userRepository.existsByEmailAndIdNot(updatedUser.getEmail(), updatedUser.getId())){
 				String message = messageSource.getMessage("common.emailAlreadyUsed",
@@ -96,7 +98,7 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
 			}
             BeanUtils.copyProperties(updatedUser, user, "password");
 			if(!updatedUser.getPassword().isEmpty()){
-				user.setPassword(bcryptEncoder.encode(user.getPassword()));
+				user.setPassword(bcryptEncoder.encode(updatedUser.getPassword()));
 			}
             userRepository.save(user);
         }
@@ -121,14 +123,17 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
     }
 
 	// Profile section
-	public User getProfile(Principal principal){
-		if(!userRepository.existsByEmail(principal.getName())){
+	// You can use Authentication or Principal
+	// Link: https://www.baeldung.com/get-user-in-spring-security
+	public User getProfile(Authentication authentication){
+		if(!userRepository.existsByEmail(authentication.getName())){
 			String modelName = messageSource.getMessage("models.user",null , LocaleContextHolder.getLocale());
 			String message = messageSource.getMessage("common.notFound",
 					new Object[] {modelName}, LocaleContextHolder.getLocale());
 			throw new ResourceNotFoundException(message);
 		}
-		return userRepository.findByEmail(principal.getName());
+		System.out.println(authentication.getAuthorities());
+		return userRepository.findByEmail(authentication.getName());
 	}
 
 	public void updateProfile(Principal principal, User updatedUser, MultipartFile file) throws EmailAlreadyUsedException {

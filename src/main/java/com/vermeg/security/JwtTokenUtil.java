@@ -1,5 +1,6 @@
 package com.vermeg.security;
 
+import com.vermeg.entities.ERole;
 import com.vermeg.entities.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -63,7 +64,7 @@ public class JwtTokenUtil implements Serializable {
 
     //generate token for user
     public String generateToken(User user) {
-        return doGenerateToken(user.getEmail());
+        return doGenerateToken(user.getEmail(), user.getRole());
     }
 
     //while creating the token -
@@ -71,10 +72,10 @@ public class JwtTokenUtil implements Serializable {
     //2. Sign the JWT using the HS256 algorithm and secret key.
     //3. According to JWS Compact Serialization(https://tools.ietf.org/html/draft-ietf-jose-json-web-signature-41#section-3.1)
     //   compaction of the JWT to a URL-safe string
-    private String doGenerateToken(String subject) {
+    private String doGenerateToken(String subject, ERole role) {
 
         Claims claims = Jwts.claims().setSubject(subject);
-        claims.put("scopes", Arrays.asList(new SimpleGrantedAuthority("ROLE_ADMIN")));
+        claims.put("authorities", Arrays.asList(new SimpleGrantedAuthority(role.name())));
 
         return Jwts.builder()
                 .setClaims(claims)
