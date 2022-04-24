@@ -19,22 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58e7b301-ef15-41fa-920d-e14a8d4aa2bc" name="Default Changelist" comment="refactor internationalisation &amp; use unique mailfor each account">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/controllers/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/controllers/ProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/security/ExceptionAdvice.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/security/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/security/JwtTokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/security/JwtTokenUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/controllers/ProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/controllers/ProfileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/controllers/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/security/ExceptionAdvice.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/security/JwtAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/security/JwtAuthenticationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/security/JwtTokenUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/security/JwtTokenUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/service/impl/UserServiceImpl.class" afterDir="false" />
+    <list default="true" id="58e7b301-ef15-41fa-920d-e14a8d4aa2bc" name="Default Changelist" comment="refactor roles and authorities">
+      <change beforePath="$PROJECT_DIR$/src/main/resources/i18n/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +135,7 @@
       <workItem from="1650515734090" duration="1110000" />
       <workItem from="1650728257029" duration="1942000" />
       <workItem from="1650731891194" duration="11654000" />
-      <workItem from="1650795663556" duration="13738000" />
+      <workItem from="1650795663556" duration="14150000" />
     </task>
     <task id="LOCAL-00001" summary="add swagger api documentation">
       <created>1649877896064</created>
@@ -207,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650806800141</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="refactor roles and authorities">
+      <created>1650810121704</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1650810121704</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,7 +227,8 @@
     <MESSAGE value="add internationalisation &amp; exceptions" />
     <MESSAGE value="fix internationalisation" />
     <MESSAGE value="refactor internationalisation &amp; use unique mailfor each account" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor internationalisation &amp; use unique mailfor each account" />
+    <MESSAGE value="refactor roles and authorities" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor roles and authorities" />
   </component>
   <component name="WindowStateProjectService">
     <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1650743699507">
@@ -250,46 +244,46 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650474708641" />
-    <state width="1323" height="258" key="GridCell.Tab.0.bottom" timestamp="1650809611810">
+    <state width="1323" height="257" key="GridCell.Tab.0.bottom" timestamp="1650810048975">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="218" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650486836732" />
-    <state width="1323" height="258" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1650809611810" />
-    <state width="1323" height="258" key="GridCell.Tab.0.center" timestamp="1650809611809">
+    <state width="1323" height="257" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1650810048975" />
+    <state width="1323" height="257" key="GridCell.Tab.0.center" timestamp="1650810048975">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="218" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650486836732" />
-    <state width="1323" height="258" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1650809611809" />
-    <state width="1323" height="258" key="GridCell.Tab.0.left" timestamp="1650809611809">
+    <state width="1323" height="257" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1650810048975" />
+    <state width="1323" height="257" key="GridCell.Tab.0.left" timestamp="1650810048974">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="218" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650486836732" />
-    <state width="1323" height="258" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1650809611809" />
-    <state width="1323" height="258" key="GridCell.Tab.0.right" timestamp="1650809611810">
+    <state width="1323" height="257" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1650810048974" />
+    <state width="1323" height="257" key="GridCell.Tab.0.right" timestamp="1650810048975">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="218" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650486836732" />
-    <state width="1323" height="258" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1650809611810" />
-    <state width="1323" height="258" key="GridCell.Tab.1.bottom" timestamp="1650809611811">
+    <state width="1323" height="257" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1650810048975" />
+    <state width="1323" height="257" key="GridCell.Tab.1.bottom" timestamp="1650810048975">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="218" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650486836732" />
-    <state width="1323" height="258" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1650809611811" />
-    <state width="1323" height="258" key="GridCell.Tab.1.center" timestamp="1650809611810">
+    <state width="1323" height="257" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1650810048975" />
+    <state width="1323" height="257" key="GridCell.Tab.1.center" timestamp="1650810048975">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="218" key="GridCell.Tab.1.center/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650486836732" />
-    <state width="1323" height="258" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1650809611810" />
-    <state width="1323" height="258" key="GridCell.Tab.1.left" timestamp="1650809611810">
+    <state width="1323" height="257" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1650810048975" />
+    <state width="1323" height="257" key="GridCell.Tab.1.left" timestamp="1650810048975">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="218" key="GridCell.Tab.1.left/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650486836732" />
-    <state width="1323" height="258" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1650809611810" />
-    <state width="1323" height="258" key="GridCell.Tab.1.right" timestamp="1650809611810">
+    <state width="1323" height="257" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1650810048975" />
+    <state width="1323" height="257" key="GridCell.Tab.1.right" timestamp="1650810048975">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="218" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650486836732" />
-    <state width="1323" height="258" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1650809611810" />
+    <state width="1323" height="257" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1650810048975" />
     <state width="498" height="488" key="SwitcherDM" timestamp="1650484120031">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

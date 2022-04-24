@@ -7,6 +7,8 @@ import com.vermeg.payload.requests.LoginRequest;
 import com.vermeg.payload.responses.ApiResponse;
 import com.vermeg.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.AuthenticationException;
@@ -28,12 +30,17 @@ public class AuthenticationController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    MessageSource messageSource;
+
     @RequestMapping(value = "login", method = RequestMethod.POST)
     public ApiResponse<TokenResponse> login(@Valid @RequestBody LoginRequest loginRequest) throws AuthenticationException {
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
         final User user = userService.findUserByEmail(loginRequest.getEmail());
         final String token = jwtTokenUtil.generateToken(user);
-        return new ApiResponse<>(200, "success",new TokenResponse(token, user.getEmail()));
+        String messageResponse = messageSource.getMessage("common.loginSuccess",
+                null, LocaleContextHolder.getLocale());
+        return new ApiResponse<>(200, messageResponse, new TokenResponse(token, user.getEmail()));
     }
 
 }
