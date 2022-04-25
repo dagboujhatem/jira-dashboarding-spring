@@ -3,6 +3,7 @@ package com.vermeg.utils;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -36,6 +37,7 @@ public class EmailSenderService {
         MimeMessage message = emailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message, MimeMessageHelper.MULTIPART_MODE_MIXED_RELATED, StandardCharsets.UTF_8.name());
         Context context = new Context();
+        context.setLocale(LocaleContextHolder.getLocale());
         context.setVariables(email.getProperties());
         helper.setFrom(email.getFrom());
         helper.setTo(email.getTo());
