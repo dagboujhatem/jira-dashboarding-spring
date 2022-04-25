@@ -50,7 +50,6 @@ public class Application implements ApplicationRunner {
         user1.setPassword(this.passwordEncoder().encode("123456789"));
         this.userRepository.save(user1);
 
-        this.userRepository.deleteAll();
         User user2 = new User();
         user2.setFirstName("Dagbouj");
         user2.setLastName("Hatem");
