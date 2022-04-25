@@ -33,7 +33,8 @@ public class ForgotPasswordController {
     }
 
     @RequestMapping(value = "reset-password", method = RequestMethod.POST)
-    public ApiResponse<TokenResponse> resetPassword(@Valid @RequestBody ResetPasswordRequest resetPasswordRequest){
+    public ApiResponse<TokenResponse> resetPassword(@Valid @RequestBody ResetPasswordRequest resetPasswordRequest) throws BadRequestException {
+        forgotPasswordService.resetPassword(resetPasswordRequest);
         String messageResponse = messageSource.getMessage("common.resetPassword",
                 null, LocaleContextHolder.getLocale());
         return new ApiResponse<>(200, messageResponse,null);

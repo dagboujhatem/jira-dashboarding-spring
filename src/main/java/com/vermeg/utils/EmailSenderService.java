@@ -42,7 +42,6 @@ public class EmailSenderService {
         helper.setSubject(email.getSubject());
         String html = templateEngine.process(email.getTemplate(), context);
         helper.setText(html, true);
-
         log.info("Sending email: {} with html body: {}", email, html);
         emailSender.send(message);
     }

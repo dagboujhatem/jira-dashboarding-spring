@@ -14,11 +14,11 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PasswordResetToken {
-    private static final int EXPIRATION = 60 * 24;
+    private static final long EXPIRATION = 15L * 60L * 1000L;    // 15 Minutes
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private int id;
 
     private String token;
 
@@ -38,4 +38,11 @@ public class PasswordResetToken {
     @Column(name = "updated_at")
     @Temporal(TemporalType.TIMESTAMP)
     private Date updatedAt = new Date();
+
+    public boolean isTokenExpired() {
+        if (this.createdAt == null) return false;
+        long currentTime = System.currentTimeMillis();
+        long lastChangedTime = this.createdAt.getTime();
+        return currentTime > lastChangedTime + EXPIRATION;
+    }
 }

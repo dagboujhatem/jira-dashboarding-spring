@@ -3,6 +3,7 @@ package com.vermeg.service.impl;
 import com.vermeg.entities.PasswordResetToken;
 import com.vermeg.entities.User;
 import com.vermeg.exceptions.BadRequestException;
+import com.vermeg.payload.requests.ResetPasswordRequest;
 import com.vermeg.repositories.PasswordResetTokenRepository;
 import com.vermeg.repositories.UserRepository;
 import com.vermeg.service.ForgotPassword;
@@ -42,19 +43,20 @@ public class ForgotPasswordServiceImpl implements ForgotPassword {
     public void forgotPassword(String userEmail) throws MessagingException, BadRequestException {
         User user = userRepository.findByEmail(userEmail);
         if (user == null) {
-            throw new BadRequestException("This e-mail address is not registered with us.");
+            String message = messageSource.getMessage("accountNotFound",
+                    null, LocaleContextHolder.getLocale());
+            throw new BadRequestException(message);
         }
         // delete old token
-//        Optional<PasswordResetToken> oldToken = passwordResetTokenRepository.findByUser(user);
-//        if(oldToken.isPresent()){
-//            passwordResetTokenRepository.delete(oldToken.get());
-//        }
+        if(passwordResetTokenRepository.existsByUser(user)){
+            PasswordResetToken oldToken = passwordResetTokenRepository.getByUser(user);
+            passwordResetTokenRepository.deleteById(oldToken.getId());
+        }
         // Create a new token in the database
         String token = UUID.randomUUID().toString();
         PasswordResetToken createdToken = new PasswordResetToken();
         createdToken.setToken(token);
         createdToken.setUser(user);
-        //token, user
         passwordResetTokenRepository.save(createdToken);
         // send mail
         Email email = new Email();
@@ -64,14 +66,34 @@ public class ForgotPasswordServiceImpl implements ForgotPassword {
                 null, LocaleContextHolder.getLocale());
         email.setSubject(message);
         email.setTemplate("forgot-password.html");
-        Map<String, Object> prop = new HashMap<>();
-        prop.put("name", user.getFirstName() + " " + user.getLastName());
-        email.setProperties(prop);
+        Map<String, Object> properties = new HashMap<>();
+        properties.put("name", user.getFirstName() + " " + user.getLastName());
+        properties.put("resetPasswordLink", "http://localhost:4200/auth/reset-password/"+ token);
+        email.setProperties(properties);
         emailSender.sendHtmlMessage(email);
     }
 
 
-    public void resetPassword(String token){
+    public void resetPassword(ResetPasswordRequest resetPasswordRequest) throws BadRequestException {
+        PasswordResetToken token = passwordResetTokenRepository.getByToken(resetPasswordRequest.getToken());
+        String message = messageSource.getMessage("invalidToken",
+                null, LocaleContextHolder.getLocale());
+        if(token == null){
+            throw new BadRequestException(message);
+        }else{
+            if(token.isTokenExpired()){
+                // Delete the expired token
+                passwordResetTokenRepository.deleteById(token.getId());
+                throw new BadRequestException(message);
+            }else{
+                // Update the password
+                User user = token.getUser();
+                user.setPassword(bcryptEncoder.encode(resetPasswordRequest.getPassword()));
+                userRepository.save(user);
+                // Delete the token
+                passwordResetTokenRepository.deleteById(token.getId());
+            }
+        }
 
     }
 }
