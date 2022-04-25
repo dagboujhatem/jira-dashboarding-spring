@@ -121,6 +121,7 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
 		newUser.setEmail(user.getEmail());
 		newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
 		newUser.setAvatar(user.getAvatar());
+		newUser.setRole(user.getRole());
         User createdUser =  userRepository.save(newUser);
         // Send welcome email
 		Email email = new Email();
