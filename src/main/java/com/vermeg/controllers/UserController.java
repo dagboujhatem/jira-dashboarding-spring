@@ -10,6 +10,7 @@ import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.mail.MessagingException;
 import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -24,7 +25,7 @@ public class UserController {
     private UserService userService ;
 
     @PostMapping
-    public ApiResponse<User> saveUser(@RequestBody User user) throws EmailAlreadyUsedException {
+    public ApiResponse<User> saveUser(@RequestBody User user) throws EmailAlreadyUsedException, MessagingException {
         String modelName = messageSource.getMessage("models.user",null , LocaleContextHolder.getLocale());
         String messageResponse = messageSource.getMessage("common.create",
                 new Object[] {modelName}, LocaleContextHolder.getLocale());

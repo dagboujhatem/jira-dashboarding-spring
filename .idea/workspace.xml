@@ -19,25 +19,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58e7b301-ef15-41fa-920d-e14a8d4aa2bc" name="Default Changelist" comment="delete unused methods">
+    <list default="true" id="58e7b301-ef15-41fa-920d-e14a8d4aa2bc" name="Default Changelist" comment="reset and forgot password">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/configurations/ThymeleafTemplateConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/configurations/ThymeleafTemplateConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/controllers/ForgotPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/controllers/ForgotPasswordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/entities/PasswordResetToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/entities/PasswordResetToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/repositories/PasswordResetTokenRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/repositories/PasswordResetTokenRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/service/ForgotPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/service/ForgotPassword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/service/impl/ForgotPasswordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/service/impl/ForgotPasswordServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/utils/EmailSenderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/utils/EmailSenderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/i18n/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/i18n/messages_fr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages_fr.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/forgot-password.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/forgot-password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/configurations/ThymeleafTemplateConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/configurations/ThymeleafTemplateConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/controllers/ForgotPasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/controllers/ForgotPasswordController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/entities/PasswordResetToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/entities/PasswordResetToken.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/repositories/PasswordResetTokenRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/repositories/PasswordResetTokenRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/security/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/security/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/service/ForgotPassword.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/service/ForgotPassword.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/welcome-email.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/welcome-email.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/service/impl/ForgotPasswordServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/service/impl/ForgotPasswordServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/i18n/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/i18n/messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/i18n/messages_fr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/i18n/messages_fr.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/forgot-password.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/forgot-password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/welcome-email.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/welcome-email.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,6 +121,9 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",GROUP_BY_PREFIXES" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -155,7 +154,7 @@
       <workItem from="1650795663556" duration="17835000" />
       <workItem from="1650826043869" duration="13012000" />
       <workItem from="1650855862011" duration="4236000" />
-      <workItem from="1650906999838" duration="250000" />
+      <workItem from="1650906999838" duration="3098000" />
     </task>
     <task id="LOCAL-00001" summary="add swagger api documentation">
       <created>1649877896064</created>
@@ -255,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650841580670</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="reset and forgot password">
+      <created>1650907412250</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1650907412250</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,7 +293,8 @@
     <MESSAGE value="reset password email" />
     <MESSAGE value="update gitignore" />
     <MESSAGE value="delete unused methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete unused methods" />
+    <MESSAGE value="reset and forgot password" />
+    <option name="LAST_COMMIT_MESSAGE" value="reset and forgot password" />
   </component>
   <component name="WindowStateProjectService">
     <state x="93" y="363" key="#com.intellij.codeInsight.i18n.I18nizeQuickFixDialog" timestamp="1650838378937">
@@ -311,46 +318,50 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650474708641" />
-    <state width="1323" height="260" key="GridCell.Tab.0.bottom" timestamp="1650859968270">
+    <state width="1323" height="12" key="GridCell.Tab.0.bottom" timestamp="1650909179361">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="190" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650841218431" />
-    <state width="1323" height="260" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1650859968270" />
-    <state width="1323" height="260" key="GridCell.Tab.0.center" timestamp="1650859968270">
+    <state width="1323" height="12" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1650909179361" />
+    <state width="1323" height="12" key="GridCell.Tab.0.center" timestamp="1650909179361">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="190" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650841218431" />
-    <state width="1323" height="260" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1650859968270" />
-    <state width="1323" height="260" key="GridCell.Tab.0.left" timestamp="1650859968270">
+    <state width="1323" height="12" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1650909179361" />
+    <state width="1323" height="12" key="GridCell.Tab.0.left" timestamp="1650909179361">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="190" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650841218430" />
-    <state width="1323" height="260" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1650859968270" />
-    <state width="1323" height="260" key="GridCell.Tab.0.right" timestamp="1650859968270">
+    <state width="1323" height="12" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1650909179361" />
+    <state width="1323" height="12" key="GridCell.Tab.0.right" timestamp="1650909179361">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="190" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650841218431" />
-    <state width="1323" height="260" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1650859968270" />
-    <state width="1323" height="260" key="GridCell.Tab.1.bottom" timestamp="1650859968271">
+    <state width="1323" height="12" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1650909179361" />
+    <state width="1323" height="12" key="GridCell.Tab.1.bottom" timestamp="1650909179361">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="190" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650841218431" />
-    <state width="1323" height="260" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1650859968271" />
-    <state width="1323" height="260" key="GridCell.Tab.1.center" timestamp="1650859968270">
+    <state width="1323" height="12" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1650909179361" />
+    <state width="1323" height="12" key="GridCell.Tab.1.center" timestamp="1650909179361">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="190" key="GridCell.Tab.1.center/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650841218431" />
-    <state width="1323" height="260" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1650859968270" />
-    <state width="1323" height="260" key="GridCell.Tab.1.left" timestamp="1650859968270">
+    <state width="1323" height="12" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1650909179361" />
+    <state width="1323" height="12" key="GridCell.Tab.1.left" timestamp="1650909179361">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="190" key="GridCell.Tab.1.left/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650841218431" />
-    <state width="1323" height="260" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1650859968270" />
-    <state width="1323" height="260" key="GridCell.Tab.1.right" timestamp="1650859968270">
+    <state width="1323" height="12" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1650909179361" />
+    <state width="1323" height="12" key="GridCell.Tab.1.right" timestamp="1650909179361">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="190" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650841218431" />
-    <state width="1323" height="260" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1650859968270" />
+    <state width="1323" height="12" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1650909179361" />
+    <state x="418" y="66" key="RollbackChangesDialog" timestamp="1650907924257">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="418" y="66" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1650907924257" />
     <state width="498" height="488" key="SwitcherDM" timestamp="1650484120031">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

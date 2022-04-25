@@ -6,6 +6,8 @@ import com.vermeg.exceptions.ResourceNotFoundException;
 import com.vermeg.repositories.UserRepository;
 import com.vermeg.entities.User;
 import com.vermeg.service.UserService;
+import com.vermeg.utils.Email;
+import com.vermeg.utils.EmailSenderService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
@@ -19,12 +21,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.mail.MessagingException;
 import javax.transaction.Transactional;
 import java.security.Principal;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 
 @Service
@@ -43,6 +43,8 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
 	@Autowired
 	private FilesStorageServiceImpl filesStorage;
 
+	@Autowired
+	EmailSenderService emailSender;
 
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 		User user = userRepository.findByEmail(email);
@@ -105,7 +107,7 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
         return updatedUser;
     }
 
-    public User save(User user) throws EmailAlreadyUsedException {
+    public User save(User user) throws EmailAlreadyUsedException, MessagingException {
 		// test if email already used
 		if (this.userRepository.existsByEmail(user.getEmail())) {
 			String message = messageSource.getMessage("common.emailAlreadyUsed",
@@ -119,7 +121,23 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
 		newUser.setEmail(user.getEmail());
 		newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
 		newUser.setAvatar(user.getAvatar());
-        return userRepository.save(newUser);
+        User createdUser =  userRepository.save(newUser);
+        // Send welcome email
+		Email email = new Email();
+		email.setTo(user.getEmail());
+		email.setFrom("svermeg@gmail.com");
+		String message = messageSource.getMessage("welcomeMailHeader",
+				null, LocaleContextHolder.getLocale());
+		email.setSubject(message);
+		email.setTemplate("welcome-email.html");
+		Map<String, Object> properties = new HashMap<>();
+		properties.put("name", user.getFirstName() + " " + user.getLastName());
+		properties.put("email", user.getEmail());
+		properties.put("password", user.getPassword());
+		properties.put("platformLink", "http://localhost:4200/auth/login/");
+		email.setProperties(properties);
+		emailSender.sendHtmlMessage(email);
+        return createdUser;
     }
 
 	// Profile section
