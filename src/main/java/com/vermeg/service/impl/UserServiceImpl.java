@@ -162,13 +162,13 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
 					new Object[] {modelName}, LocaleContextHolder.getLocale());
 			throw new ResourceNotFoundException(message);
 		}
-		if (userRepository.existsByEmailAndIdNot(updatedUser.getEmail(), updatedUser.getId())){
+		User user = userRepository.findByEmail(principal.getName());
+		if (userRepository.existsByEmailAndIdNot(updatedUser.getEmail(), user.getId())){
 			String message = messageSource.getMessage("common.emailAlreadyUsed",
 					null, LocaleContextHolder.getLocale());
 			throw new EmailAlreadyUsedException(message);
 		}
 		filesStorage.save(file);
-		User user = userRepository.findByEmail(principal.getName());
 		user.setFirstName(updatedUser.getFirstName());
 		user.setLastName(updatedUser.getLastName());
 		user.setEmail(updatedUser.getEmail());
