@@ -36,3 +36,7 @@
 
 # IntelliJ
 /out/
+
+# upload  folder
+uploads/*
+!uploads/.gitkeep
