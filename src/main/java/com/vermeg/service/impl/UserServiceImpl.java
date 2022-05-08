@@ -19,7 +19,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.mail.MessagingException;
 import javax.transaction.Transactional;
@@ -39,9 +38,6 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
 
 	@Autowired
 	private BCryptPasswordEncoder bcryptEncoder;
-
-	@Autowired
-	private FilesStorageServiceImpl filesStorage;
 
 	@Autowired
 	EmailSenderService emailSender;
@@ -155,7 +151,7 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
 		return userRepository.findByEmail(authentication.getName());
 	}
 
-	public void updateProfile(Principal principal, User updatedUser, MultipartFile file) throws EmailAlreadyUsedException {
+	public void updateProfile(Principal principal, User updatedUser) throws EmailAlreadyUsedException {
 		if(!userRepository.existsByEmail(principal.getName())){
 			String modelName = messageSource.getMessage("models.user",null , LocaleContextHolder.getLocale());
 			String message = messageSource.getMessage("common.notFound",
@@ -168,11 +164,11 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
 					null, LocaleContextHolder.getLocale());
 			throw new EmailAlreadyUsedException(message);
 		}
-		filesStorage.save(file);
 		user.setFirstName(updatedUser.getFirstName());
 		user.setLastName(updatedUser.getLastName());
 		user.setEmail(updatedUser.getEmail());
-		if(!updatedUser.getPassword().isEmpty()){
+		user.setAvatar(updatedUser.getAvatar());
+		if(updatedUser.getPassword() != null){
 			user.setPassword(bcryptEncoder.encode(updatedUser.getPassword()));
 		}
 		userRepository.save(user);

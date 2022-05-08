@@ -32,11 +32,10 @@ public class ProfileController {
         return new ApiResponse<>(200, messageResponse, userProfile);
     }
 
-    @RequestMapping(value = "profile", method = RequestMethod.PUT, consumes = { MediaType.MULTIPART_FORM_DATA_VALUE})
+    @RequestMapping(value = "profile", method = RequestMethod.PUT)
     public ApiResponse<Object> updateProfile(Principal principal,
-         @ModelAttribute(value = "properties") User updatedUser,
-         @RequestParam(value = "file", required = false) MultipartFile file) throws EmailAlreadyUsedException {
-        userService.updateProfile(principal, updatedUser, file);
+         @RequestBody User updatedUser) throws EmailAlreadyUsedException {
+        userService.updateProfile(principal, updatedUser);
         String messageResponse = messageSource.getMessage("common.updateProfile",
                 null, LocaleContextHolder.getLocale());
         return new ApiResponse<>(200, messageResponse,null);

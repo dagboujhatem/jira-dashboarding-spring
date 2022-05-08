@@ -3,7 +3,6 @@ package com.vermeg.service;
 import com.vermeg.entities.User;
 import com.vermeg.exceptions.EmailAlreadyUsedException;
 import org.springframework.security.core.Authentication;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.mail.MessagingException;
 import java.security.Principal;
@@ -18,5 +17,5 @@ public interface UserService {
     void delete(int id);
     // Profile section
     User getProfile(Authentication authentication);
-    void updateProfile(Principal principal, User updatedUser, MultipartFile file) throws EmailAlreadyUsedException;
+    void updateProfile(Principal principal, User updatedUser) throws EmailAlreadyUsedException;
 }
