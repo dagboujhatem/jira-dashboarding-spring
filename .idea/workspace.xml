@@ -20,29 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58e7b301-ef15-41fa-920d-e14a8d4aa2bc" name="Default Changelist" comment="last commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/controllers/FilesStorageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/exceptions/FileStorageException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/exceptions/FileUploadExceptionAdvice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/controllers/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/controllers/ProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/entities/FileInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/payload/responses/FileInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/security/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/service/FilesStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/service/FilesStorageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/service/impl/FilesStorageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/service/impl/FilesStorageServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/forgot-password.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/forgot-password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/welcome-email.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/welcome-email.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/controllers/ProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/controllers/ProfileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/entities/FileInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/security/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/security/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/service/FilesStorageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/service/FilesStorageService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/service/impl/FilesStorageServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/service/impl/FilesStorageServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/forgot-password.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/forgot-password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/welcome-email.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/welcome-email.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vermeg/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vermeg/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vermeg/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vermeg/service/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +46,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JQLSearcherProjectManager">
@@ -177,7 +162,9 @@
       <workItem from="1651875984632" duration="4164000" />
       <workItem from="1651938769387" duration="3549000" />
       <workItem from="1651956401171" duration="1168000" />
-      <workItem from="1652015827874" duration="7182000" />
+      <workItem from="1652015827874" duration="7814000" />
+      <workItem from="1652036769130" duration="1185000" />
+      <workItem from="1652115509996" duration="1032000" />
     </task>
     <task id="LOCAL-00001" summary="add swagger api documentation">
       <created>1649877896064</created>
@@ -326,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651868423145</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="last commit in this week">
+      <created>1652034078810</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1652034078810</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -365,7 +359,8 @@
     <MESSAGE value="fix local in rendering email template" />
     <MESSAGE value="last commit" />
     <MESSAGE value="git keep" />
-    <option name="LAST_COMMIT_MESSAGE" value="git keep" />
+    <MESSAGE value="last commit in this week" />
+    <option name="LAST_COMMIT_MESSAGE" value="last commit in this week" />
   </component>
   <component name="WindowStateProjectService">
     <state x="93" y="363" key="#com.intellij.codeInsight.i18n.I18nizeQuickFixDialog" timestamp="1650838378937">
@@ -405,46 +400,46 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1651939242976" />
-    <state width="1323" height="226" key="GridCell.Tab.0.bottom" timestamp="1652033777708">
+    <state width="1323" height="226" key="GridCell.Tab.0.bottom" timestamp="1652034648263">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="190" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650841218431" />
-    <state width="1323" height="226" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1652033777708" />
-    <state width="1323" height="226" key="GridCell.Tab.0.center" timestamp="1652033777708">
+    <state width="1323" height="226" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1652034648263" />
+    <state width="1323" height="226" key="GridCell.Tab.0.center" timestamp="1652034648263">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="190" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650841218431" />
-    <state width="1323" height="226" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1652033777708" />
-    <state width="1323" height="226" key="GridCell.Tab.0.left" timestamp="1652033777708">
+    <state width="1323" height="226" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1652034648263" />
+    <state width="1323" height="226" key="GridCell.Tab.0.left" timestamp="1652034648263">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="190" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650841218430" />
-    <state width="1323" height="226" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1652033777708" />
-    <state width="1323" height="226" key="GridCell.Tab.0.right" timestamp="1652033777708">
+    <state width="1323" height="226" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1652034648263" />
+    <state width="1323" height="226" key="GridCell.Tab.0.right" timestamp="1652034648263">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="190" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650841218431" />
-    <state width="1323" height="226" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1652033777708" />
-    <state width="1323" height="226" key="GridCell.Tab.1.bottom" timestamp="1652033777708">
+    <state width="1323" height="226" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1652034648263" />
+    <state width="1323" height="226" key="GridCell.Tab.1.bottom" timestamp="1652034648279">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="190" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650841218431" />
-    <state width="1323" height="226" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1652033777708" />
-    <state width="1323" height="226" key="GridCell.Tab.1.center" timestamp="1652033777708">
+    <state width="1323" height="226" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1652034648279" />
+    <state width="1323" height="226" key="GridCell.Tab.1.center" timestamp="1652034648279">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="190" key="GridCell.Tab.1.center/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650841218431" />
-    <state width="1323" height="226" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1652033777708" />
-    <state width="1323" height="226" key="GridCell.Tab.1.left" timestamp="1652033777708">
+    <state width="1323" height="226" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1652034648279" />
+    <state width="1323" height="226" key="GridCell.Tab.1.left" timestamp="1652034648263">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="190" key="GridCell.Tab.1.left/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650841218431" />
-    <state width="1323" height="226" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1652033777708" />
-    <state width="1323" height="226" key="GridCell.Tab.1.right" timestamp="1652033777708">
+    <state width="1323" height="226" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1652034648263" />
+    <state width="1323" height="226" key="GridCell.Tab.1.right" timestamp="1652034648279">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="190" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650841218431" />
-    <state width="1323" height="226" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1652033777708" />
+    <state width="1323" height="226" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1652034648279" />
     <state x="418" y="66" key="RollbackChangesDialog" timestamp="1650907924257">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -458,16 +453,20 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="VCS.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1651939242976" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1651014237464">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1652038054157">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1651014237464" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1649890102597" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1652038054157" />
     <state x="389" y="0" width="587" height="728" key="find.popup" timestamp="1652029368378">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="389" y="0" width="587" height="728" key="find.popup/0.0.1366.728/1366.0.1600.860@0.0.1366.728" timestamp="1650827356534" />
     <state x="389" y="0" width="587" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1652029368378" />
+    <state x="364" y="152" key="git4idea.merge.GitPullDialog" timestamp="1652034132743">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="364" y="152" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1652034132743" />
     <state x="324" y="90" width="700" height="530" key="recent.locations.popup" timestamp="1651939986169">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -43,20 +43,21 @@ public class Application implements ApplicationRunner {
         // Insert default user (with ADMIN role as default)
         this.userRepository.deleteAll();
         User user1 = new User();
-        user1.setFirstName("Hammami");
-        user1.setLastName("Nadia");
+        user1.setFirstName("Nadia");
+        user1.setLastName("Hammami");
         user1.setRole(ERole.ROLE_ADMIN);
         user1.setEmail("hammaminadia293@gmail.com");
         user1.setPassword(this.passwordEncoder().encode("123456789"));
         this.userRepository.save(user1);
 
-        User user2 = new User();
-        user2.setFirstName("Dagbouj");
-        user2.setLastName("Hatem");
-        user2.setRole(ERole.ROLE_ADMIN);
-        user2.setEmail("dagboujhatem@gmail.com");
-        user2.setPassword(this.passwordEncoder().encode("123456789"));
-        this.userRepository.save(user2);
+//        User user2 = new User();
+//        user2.setFirstName("Hatem");
+//        user2.setLastName("Dagbouj");
+//        user2.setRole(ERole.ROLE_ADMIN);
+//        user2.setEmail("dagboujhatem@gmail.com");
+//        user2.setPassword(this.passwordEncoder().encode("123456789"));
+//        this.userRepository.save(user2);
+
         // Files Storage section
         storageService.deleteAll();
         storageService.init();
