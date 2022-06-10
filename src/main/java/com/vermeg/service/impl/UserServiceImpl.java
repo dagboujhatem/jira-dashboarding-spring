@@ -87,6 +87,18 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
 	}
 
     public User update(int id, User updatedUser) throws EmailAlreadyUsedException {
+		//		if(!userRepository.existsByEmail(principal.getName())){
+//			String modelName = messageSource.getMessage("models.user",null , LocaleContextHolder.getLocale());
+//			String message = messageSource.getMessage("common.notFound",
+//					new Object[] {modelName}, LocaleContextHolder.getLocale());
+//			throw new ResourceNotFoundException(message);
+//		}
+//		User user = userRepository.findByEmail(principal.getName());
+//		if (userRepository.existsByEmailAndIdNot(updatedUser.getEmail(), user.getId())){
+//			String message = messageSource.getMessage("common.emailAlreadyUsed",
+//					null, LocaleContextHolder.getLocale());
+//			throw new EmailAlreadyUsedException(message);
+//		}
         User user = findById(id);
         if(user != null) {
         	if (userRepository.existsByEmailAndIdNot(updatedUser.getEmail(), updatedUser.getId())){
@@ -152,22 +164,9 @@ public class UserServiceImpl implements UserDetailsService ,UserService{
 	}
 
 	public void updateProfile(Principal principal, User updatedUser) throws EmailAlreadyUsedException {
-		if(!userRepository.existsByEmail(principal.getName())){
-			String modelName = messageSource.getMessage("models.user",null , LocaleContextHolder.getLocale());
-			String message = messageSource.getMessage("common.notFound",
-					new Object[] {modelName}, LocaleContextHolder.getLocale());
-			throw new ResourceNotFoundException(message);
-		}
 		User user = userRepository.findByEmail(principal.getName());
-		if (userRepository.existsByEmailAndIdNot(updatedUser.getEmail(), user.getId())){
-			String message = messageSource.getMessage("common.emailAlreadyUsed",
-					null, LocaleContextHolder.getLocale());
-			throw new EmailAlreadyUsedException(message);
-		}
 		user.setFirstName(updatedUser.getFirstName());
 		user.setLastName(updatedUser.getLastName());
-		user.setEmail(updatedUser.getEmail());
-		user.setAvatar(updatedUser.getAvatar());
 		if(updatedUser.getPassword() != null){
 			user.setPassword(bcryptEncoder.encode(updatedUser.getPassword()));
 		}

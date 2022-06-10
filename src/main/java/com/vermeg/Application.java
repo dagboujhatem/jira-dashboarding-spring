@@ -50,13 +50,13 @@ public class Application implements ApplicationRunner {
         user1.setPassword(this.passwordEncoder().encode("123456789"));
         this.userRepository.save(user1);
 
-//        User user2 = new User();
-//        user2.setFirstName("Hatem");
-//        user2.setLastName("Dagbouj");
-//        user2.setRole(ERole.ROLE_ADMIN);
-//        user2.setEmail("dagboujhatem@gmail.com");
-//        user2.setPassword(this.passwordEncoder().encode("123456789"));
-//        this.userRepository.save(user2);
+        User user2 = new User();
+        user2.setFirstName("Hatem");
+        user2.setLastName("Dagbouj");
+        user2.setRole(ERole.ROLE_ADMIN);
+        user2.setEmail("dagboujhatem@gmail.com");
+        user2.setPassword(this.passwordEncoder().encode("123456789"));
+        this.userRepository.save(user2);
 
         // Files Storage section
         storageService.deleteAll();
